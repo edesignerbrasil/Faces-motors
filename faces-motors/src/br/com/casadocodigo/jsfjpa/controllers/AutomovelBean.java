@@ -2,76 +2,24 @@ package br.com.casadocodigo.jsfjpa.controllers;
 
 import javax.faces.bean.ManagedBean;
 
+import br.com.casadocodigo.jsfjpa.entities.Automovel;
+
 @ManagedBean
 public class AutomovelBean {
 
-	private String marca;
-	private String modelo;
-	private Integer anoFabricacao;
-	private Integer anoModelo;
-	private String observacoes;
+	private Automovel automovel = new Automovel();
 	
 	
 	
-	public String getMarca() {
-		return marca;
+	public Automovel getAutomovel() {
+		return this.automovel;
 	}
 
 
 
-	public void setMarca(String marca) {
-		this.marca = marca;
+	public void setAutomovel(Automovel automovel) {
+		this.automovel = automovel;
 	}
-
-
-
-	public String getModelo() {
-		return modelo;
-	}
-
-
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
-
-
-
-	public Integer getAnoFabricacao() {
-		return anoFabricacao;
-	}
-
-
-
-	public void setAnoFabricacao(Integer anoFabricacao) {
-		this.anoFabricacao = anoFabricacao;
-	}
-
-
-
-	public Integer getAnoModelo() {
-		return anoModelo;
-	}
-
-
-
-	public void setAnoModelo(Integer anoModelo) {
-		this.anoModelo = anoModelo;
-	}
-
-
-
-	public String getObservacoes() {
-		return observacoes;
-	}
-
-
-
-	public void setObservacoes(String observacoes) {
-		this.observacoes = observacoes;
-	}
-
-
 
 	public void salva(){
 		System.out.println("entrei salva!!!");

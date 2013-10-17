@@ -1,8 +1,10 @@
 package br.com.casadocodigo.jsfjpa.controllers;
 
 import javax.faces.bean.ManagedBean;
+import javax.persistence.EntityManager;
 
 import br.com.casadocodigo.jsfjpa.entities.Automovel;
+import br.com.casadocodigo.jsfjpa.persistence.JPAUtil;
 
 @ManagedBean
 public class AutomovelBean {
@@ -14,7 +16,10 @@ public class AutomovelBean {
 	}
 
 	public void salva(Automovel automovel){
-		this.automovel = automovel;
-		System.out.println("entrei salva!!!" + this.automovel.getMarca());
+		EntityManager em = JPAUtil.getEntityManager();
+		em.getTransaction().begin();
+		em.persist(automovel);
+		em.getTransaction().commit();
+		em.close();
 	}
 }

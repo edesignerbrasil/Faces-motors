@@ -9,19 +9,12 @@ public class AutomovelBean {
 
 	private Automovel automovel = new Automovel();
 	
-	
-	
-	public Automovel getAutomovel() {
+	public Automovel getAutomovel(){
 		return this.automovel;
 	}
 
-
-
-	public void setAutomovel(Automovel automovel) {
+	public void salva(Automovel automovel){
 		this.automovel = automovel;
-	}
-
-	public void salva(){
-		System.out.println("entrei salva!!!" + automovel.getMarca());
+		System.out.println("entrei salva!!!" + this.automovel.getMarca());
 	}
 }

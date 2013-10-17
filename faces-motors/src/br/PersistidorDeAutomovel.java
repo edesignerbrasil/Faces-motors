@@ -28,16 +28,21 @@ public class PersistidorDeAutomovel {
 		auto.setObservacoes("Nunca foi batido");
 		**/
 		
-		Query q = em.createQuery("select a from Automovel a", Automovel.class);
-		
+		/**
+		Query q = em.createQuery("select a from Automovel a", Automovel.class);		
 		List<Automovel> autos = q.getResultList();
 		
 		for(Automovel a : autos){
 			System.out.println(a.getModelo());
 		}
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
+		**/
 		
+		
+		EntityTransaction tx = em.getTransaction();
+		
+		Automovel auto = em.getReference(Automovel.class, 1L);
+		tx.begin();
+		em.remove(auto);
 		//em.persist(auto);
 		
 		tx.commit();

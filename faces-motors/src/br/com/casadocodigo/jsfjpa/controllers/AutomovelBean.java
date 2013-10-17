@@ -22,6 +22,6 @@ public class AutomovelBean {
 	}
 
 	public void salva(){
-		System.out.println("entrei salva!!!");
+		System.out.println("entrei salva!!!" + automovel.getMarca());
 	}
 }

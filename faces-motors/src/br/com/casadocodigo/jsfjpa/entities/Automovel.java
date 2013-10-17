@@ -16,6 +16,7 @@ public class Automovel {
 	private Float kilometragem;
 	private String observacoes;
 	private String modelo;
+	private String marca;
 	
 	public Automovel() {
 		// TODO Auto-generated constructor stub
@@ -27,6 +28,14 @@ public class Automovel {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 
 	public Integer getAnoModelo() {

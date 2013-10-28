@@ -37,7 +37,7 @@ public class PersistidorDeAutomovel {
 		}
 		**/
 		
-		
+		/*
 		EntityTransaction tx = em.getTransaction();
 		
 		Automovel auto = em.getReference(Automovel.class, 1L);
@@ -48,7 +48,30 @@ public class PersistidorDeAutomovel {
 		tx.commit();
 		
 		em.close();
+		*/
 		
+		//4.3 Ciclo de vida de um objeto na JPA
+		/**em.getTransaction().begin();
+		
+		Automovel porscheDetached = em.find(Automovel.class, 1L);
+		em.detach(porscheDetached);
+		
+		porscheDetached.setObservacoes("Porshe 911 Turbo");
+		porscheDetached.setMarca("Ferrari");
+		
+		Automovel porsheGerenciado = em.find(Automovel.class, 1L);
+		porsheGerenciado.setObservacoes("Porshe 911 Turbo TTT");
+		porsheGerenciado.setMarca("Carroça");
+		
+		Automovel porsheModificado = em.merge(porscheDetached);
+		
+		System.out.println(porscheDetached != porsheModificado);
+		
+		System.out.println(porsheGerenciado == porsheModificado);
+		
+		em.getTransaction().commit();
+		*/
+		//Fim 4.3
 	}
 
 }
